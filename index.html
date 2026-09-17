@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Bisnis Digital - SMK IT Al Hidayah</title>
+    <!-- FontAwesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Reset & Dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #1a365d;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: #2b6cb0;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* 1. Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #e2e8f0;
+            color: #1a365d;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* 2. Tentang Kelas */
+        .about {
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #4a5568;
+        }
+
+        .values {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .value-badge {
+            background-color: #ebf8ff;
+            color: #2b6cb0;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        /* 3. Keahlian Utama */
+        .competencies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: #2b6cb0;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #2d3748;
+        }
+
+        /* 4. Portofolio Proyek */
+        .portfolio {
+            background-color: #ffffff;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 {
+            margin-bottom: 8px;
+        }
+
+        /* 5. Directory (Mahasiswa & Dosen) */
+        .directory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .profile-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .profile-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .profile-card h4 {
+            margin-top: 10px;
+            color: #2d3748;
+        }
+
+        .profile-card p {
+            font-size: 0.9rem;
+            color: #718096;
+            margin-bottom: 10px;
+        }
+
+        .social-links a {
+            margin: 0 5px;
+            color: #4a5568;
+        }
+
+        /* 6. Prestasi & Kegiatan */
+        .activities {
+            background-color: #ffffff;
+        }
+
+        .activity-list {
+            list-style: none;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .activity-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        /* 7. Footer & Kontak */
+        footer {
+            background-color: #1a365d;
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 300px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #2b6cb0;
+            padding-top: 20px;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>Digital Business - SMK IT Al Hidayah</h1>
+            <p>"Bridging Technology, Marketing, and Innovation"</p>
+            <a href="#projects" class="btn">Lihat Portofolio</a>
+        </div>
+    </header>
+
+    <!-- 2. Tentang Kelas -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Kelas</h2>
+            <p>Program keahlian Bisnis Digital di SMK IT Al Hidayah berfokus pada pengembangan keterampilan digital marketing, e-commerce, analisis data, dan desain produk untuk menyiapkan lulusan yang siap bersaing di industri kreatif dan teknologi.</p>
+            <div class="values">
+                <span class="value-badge">Data-Driven</span>
+                <span class="value-badge">Innovation</span>
+                <span class="value-badge">Collaboration</span>
+                <span class="value-badge">Digital Mindset</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Keahlian Utama -->
+    <section class="competencies">
+        <div class="container">
+            <h2 class="section-title">Keahlian Utama</h2>
+            <div class="competencies-grid">
+                <div class="card">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <h3>Digital Marketing & SEO</h3>
+                    <p>Search Engine Optimization, Content Strategy, Performance Marketing.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <h3>E-Commerce Strategy</h3>
+                    <p>Store Management, Supply Chain Basics, Marketplace Optimization.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Data Analytics</h3>
+                    <p>Web Analytics, Customer Data Insights, Financial Modeling.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-pen-nib"></i>
+                    <h3>UI/UX & Product Design</h3>
+                    <p>Wireframing, User Research, Prototyping.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Portofolio Proyek -->
+    <section class="portfolio" id="projects">
+        <div class="container">
+            <h2 class="section-title">Portofolio Proyek</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Proyek E-Commerce / Start-up</h3>
+                        <p>Simulasi & optimasi toko online buatan siswa untuk produk lokal.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Kampanye Digital</h3>
+                        <p>Perencanaan dan analisis iklan digital serta manajemen media sosial.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Desain UI/UX Produk</h3>
+                        <p>Rancangan antarmuka aplikasi seluler menggunakan Figma.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Profil Mahasiswa & Pengajar -->
+    <section class="directory">
+        <div class="container">
+            <h2 class="section-title">Pengajar & Siswa</h2>
+            
+            <h3 style="margin-bottom: 20px; color: #2b6cb0;">Guru Pengampu</h3>
+            <div class="directory-grid" style="margin-bottom: 40px;">
+                <div class="profile-card">
+                    <img src="Mujayyanah, S.E.jpg" alt="Mujayyanah, S.E">
+                    <h4>Mujayyanah, S.E</h4>
+                    <p>Major Teacher - Digital Business</p>
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 20px; color: #2b6cb0;">Struktur & Siswa</h3>
+            <div class="directory-grid">
+                <div class="profile-card">
+                    <img src="Harun Ar Rasyid.png" alt="Harun Ar Rasyid">
+                    <h4>Harun Ar Rasyid</h4>
+                    <p>Leader of Major</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="Ghifari Nashihatul Lathifah.png" alt="Ghifari Nashihatul Lathifah">
+                    <h4>Ghifari Nashiatul L</h4>
+                    <p>Treasurer</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="Bagas Arya Pratama.png" alt="Bagas Arya Pratama">
+                    <h4>Bagas Arya Pratama</h4>
+                    <p>Student</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="Nathan Abdurrahman.png" alt="Nathan Abdurrahman">
+                    <h4>Nathan Abdurrahman</h4>
+                    <p>Student</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="Muhammad Farhan Al Ghani.png" alt="Muhammad Farhan Al Ghani">
+                    <h4>M Farhan Al Ghani</h4>
+                    <p>Student</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="Fadhlan Ridho Athalloh.png" alt="Fadhlan Ridho Athalloh">
+                    <h4>Fadhlan Ridho A</h4>
+                    <p>Student</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Prestasi & Kegiatan -->
+    <section class="activities">
+        <div class="container">
+            <h2 class="section-title">Prestasi & Kegiatan</h2>
+            <ul class="activity-list">
+                <li><i class="fa-solid fa-trophy" style="color: #d69e2e;"></i> <strong>Juara Business Plan Challenge</strong> - Kompetisi Nasional</li>
+                <li><i class="fa-solid fa-chalkboard-user" style="color: #2b6cb0;"></i> <strong>Workshop Digital Marketing & SEO</strong></li>
+                <li><i class="fa-solid fa-building" style="color: #2b6cb0;"></i> <strong>Kunjungan Industri (Industrial Visit)</strong> ke Perusahaan E-Commerce</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 7. Footer / Kontak -->
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <h3>Digital Business SMK IT Al Hidayah</h3>
+                <p>Menyiapkan talenta digital yang inovatif dan berdaya saing tinggi.</p>
+                <br>
+                <h4>Ikuti Kami</h4>
+                <div class="social-links" style="margin-top: 10px;">
+                    <a href="#" style="color: white; font-size: 1.2rem; margin-right: 15px;"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem; margin-right: 15px;"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem; margin-right: 15px;"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Hubungi Kami</h3>
+                <form action="#">
+                    <input type="text" placeholder="Nama Anda" required>
+                    <input type="email" placeholder="Email Anda" required>
+                    <textarea rows="3" placeholder="Pesan..." required></textarea>
+                    <button type="submit" class="btn" style="cursor: pointer;">Kirim</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Digital Business SMK IT Al Hidayah. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
